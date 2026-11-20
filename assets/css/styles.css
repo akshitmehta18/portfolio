@@ -1,157 +1,718 @@
 /* ==========================================================================
-   Akshit Mehta - Senior Full-Stack & Data Science Portfolio Stylesheet
+   Akshit Mehta - Telemyr Minimalist Studio Architecture & Stylesheet
+   Faithful clone of telemyr.com design system, palette, and typography
    ========================================================================== */
 
 :root {
-  --bg-dark: #0a0d14;
-  --bg-card: #111726;
-  --bg-card-hover: #162035;
-  --bg-glass: rgba(17, 23, 38, 0.75);
-  --border-glass: rgba(134, 151, 187, 0.15);
-  --border-glow: rgba(56, 189, 248, 0.35);
+  --color-white: #FFFFFF;
+  --color-off-white: #F6F0E6;
+  --color-light-grey: #F2F2F2;
+  --color-rule-grey: #E2E2E2;
+  --color-text-grey: #888888;
+  --color-black: #000000;
+  --color-ink: #0D0D0D;
+  --color-accent-lime: #AFF005;
+  --color-supernal-light-green: #E8FFA7;
+  --color-lilac: #D4D1EF;
+  --color-yellow: #FFF200;
   
-  --primary: #38bdf8;         /* Cyan */
-  --primary-glow: rgba(56, 189, 248, 0.25);
-  --accent-emerald: #10b981;  /* Emerald */
-  --accent-indigo: #818cf8;   /* Indigo */
-  --accent-amber: #f59e0b;    /* Amber */
+  --rule: 1px solid var(--color-rule-grey);
+  
+  --font-primary: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Courier New", monospace;
 
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
+  --nav-squares-size: 6.5rem;
+  --nav-squares-icon: 2rem;
+  --page-gutter: clamp(1.5rem, 5vw, 6rem);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  overflow-x: hidden;
+  padding-bottom: calc(var(--nav-squares-size) + 2rem);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0d14;
+  background: var(--color-white);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--color-rule-grey);
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #bbb;
 }
 
-/* Glowing text and gradient utilities */
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 20%, #38bdf8 60%, #818cf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* ==========================================================================
+   Telemyr Nav Squares (Iconic Fixed Dock)
+   ========================================================================== */
+.nav-squares {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-white);
+  border-top: var(--rule);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #10b981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.nav-squares-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.nav-squares-row::-webkit-scrollbar {
+  display: none;
 }
 
-.glow-card {
+.nav-square {
   position: relative;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex: 1 0 var(--nav-squares-size);
+  min-width: 90px;
+  height: var(--nav-squares-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-right: var(--rule);
+  color: var(--color-black);
+  text-decoration: none;
+  background: var(--color-white);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  user-select: none;
 }
 
-.glow-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.05), transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+.nav-square:hover {
+  background: var(--color-light-grey);
 }
 
-.glow-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
-  border-color: rgba(56, 189, 248, 0.4);
+.nav-square.active,
+.nav-square:active {
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
-/* Radar & background grid */
-.bg-grid-pattern {
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.06) 1px, transparent 0);
-  background-size: 32px 32px;
+.nav-square.active .nav-square-icon svg,
+.nav-square.active .nav-square-label {
+  color: var(--color-white);
 }
 
-.bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%);
+.nav-square-icon {
+  width: var(--nav-squares-icon);
+  height: var(--nav-squares-icon);
+  display: grid;
+  place-items: center;
+}
+.nav-square-icon svg {
+  width: 100%;
+  height: 100%;
+  color: currentColor;
 }
 
-/* Terminal Styling */
-.terminal-window {
-  background: #090d16;
-  border: 1px solid rgba(134, 151, 187, 0.2);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+.nav-square-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
 }
 
-.terminal-header {
-  background: #111726;
-  border-bottom: 1px solid rgba(134, 151, 187, 0.15);
+@media (max-width: 640px) {
+  :root {
+    --nav-squares-size: 4.75rem;
+    --nav-squares-icon: 1.5rem;
+  }
+  .nav-squares {
+    top: 0;
+    bottom: auto;
+    border-top: 0;
+    border-bottom: var(--rule);
+  }
+  body {
+    padding-top: calc(var(--nav-squares-size) + 1rem);
+    padding-bottom: 2rem;
+  }
+  .nav-square-label {
+    font-size: 9px;
+  }
 }
 
-.terminal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+/* ==========================================================================
+   Hero Row (Telemyr h-row)
+   ========================================================================== */
+.h-row {
+  min-height: calc(100vh - var(--nav-squares-size));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--page-gutter);
+  text-align: center;
+  border-bottom: var(--rule);
+  position: relative;
+  background: var(--color-white);
 }
 
-.cursor-blink {
-  display: inline-block;
+.h-row__logo {
+  font-size: clamp(3.2rem, 11vw, 11rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: var(--color-black);
+  text-transform: lowercase;
+  margin-bottom: 1.25rem;
+}
+
+.h-row__tag {
+  font-size: clamp(1rem, 2.2vw, 1.8rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-text-grey);
+  margin-bottom: 2.5rem;
+}
+
+.h-row__cells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  max-w: 900px;
+  margin-bottom: 3rem;
+}
+
+.h-row__cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--color-light-grey);
+  border: var(--rule);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.h-row__cell:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.h-row__spot {
   width: 8px;
-  height: 15px;
-  background-color: #38bdf8;
-  vertical-align: middle;
-  animation: blink 1s step-end infinite;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent-lime);
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+.h-row__partners {
+  border-top: var(--rule);
+  padding-top: 1.5rem;
+  width: 100%;
+  max-width: 700px;
 }
 
-/* Floating animation */
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+.h-row__partners-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-grey);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-.animate-float {
-  animation: floatSlow 4s ease-in-out infinite;
+/* ==========================================================================
+   Story Section (Telemyr about-story)
+   ========================================================================== */
+.about-story {
+  padding: clamp(3rem, 8vw, 7rem) var(--page-gutter);
+  border-bottom: var(--rule);
+  background: var(--color-white);
 }
 
-/* Toast notification */
-#toast {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+.about-heading {
+  font-size: clamp(1.75rem, 4.2vw, 4rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  color: var(--color-black);
+  max-width: 1200px;
 }
 
-/* Interactive Badge Pulse */
-.pulse-emerald {
-  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  animation: pulse-green 2s infinite;
+.story-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1em 0.45em;
+  border-radius: 6px;
+  background: var(--color-light-grey);
+  border: var(--rule);
+  font-size: 0.9em;
+  font-weight: 600;
+  vertical-align: baseline;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
 }
 
-@keyframes pulse-green {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+.story-chip.bg-lime {
+  background: var(--color-accent-lime);
+  border-color: #9fe200;
+  color: var(--color-black);
+}
+
+.story-chip.bg-yellow {
+  background: var(--color-yellow);
+  border-color: #e5da00;
+  color: var(--color-black);
+}
+
+.story-chip.bg-lilac {
+  background: var(--color-lilac);
+  border-color: #c4c0e6;
+  color: var(--color-black);
+}
+
+/* ==========================================================================
+   Section Headers & Grid Layouts
+   ========================================================================== */
+.studio-section {
+  padding: clamp(3.5rem, 7vw, 6rem) var(--page-gutter);
+  border-bottom: var(--rule);
+}
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-grey);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--color-black);
+  margin-bottom: 2.5rem;
+}
+
+/* 4-Column Capabilities Grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  border-top: var(--rule);
+  border-left: var(--rule);
+}
+
+.capability-card {
+  border-right: var(--rule);
+  border-bottom: var(--rule);
+  padding: 2.5rem 2rem;
+  background: var(--color-white);
+  transition: background-color 0.2s ease;
+}
+
+.capability-card:hover {
+  background: var(--color-light-grey);
+}
+
+.capability-num {
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-text-grey);
+  margin-bottom: 1.5rem;
+}
+
+.capability-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.capability-list {
+  list-style: none;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.capability-list li {
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--color-rule-grey);
+}
+.capability-list li:last-child {
+  border-bottom: 0;
+}
+
+/* ==========================================================================
+   Case Studies / Works List (Telemyr Editorial Style)
+   ========================================================================== */
+.works-list {
+  display: flex;
+  flex-direction: column;
+  border-top: var(--rule);
+}
+
+.work-item {
+  display: grid;
+  grid-template-columns: 80px 1.5fr 1fr 140px;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 2.25rem 0;
+  border-bottom: var(--rule);
+  text-decoration: none;
+  color: var(--color-black);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .work-item {
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
   }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  .work-item-meta, .work-item-action {
+    grid-column: 2 / -1;
   }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-  }
+}
+
+.work-item:hover {
+  background: var(--color-light-grey);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.work-num {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-grey);
+}
+
+.work-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.work-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-grey);
+  line-height: 1.4;
+}
+
+.work-item-meta {
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  color: #555;
+}
+
+.work-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--color-white);
+  border: var(--rule);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.work-item-action {
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+/* ==========================================================================
+   Why Me / Principles Cards (Telemyr why-us)
+   ========================================================================== */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.why-card {
+  background: var(--color-light-grey);
+  border: var(--rule);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: all 0.2s ease;
+}
+
+.why-card:hover {
+  background: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.why-card-top {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.why-card-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.why-card-text {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Minimal Terminal Emulator
+   ========================================================================== */
+.telemyr-terminal {
+  border: var(--rule);
+  background: var(--color-black);
+  color: #00ff66;
+  font-family: var(--font-mono);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.telemyr-terminal-header {
+  background: #111;
+  border-bottom: 1px solid #222;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.telemyr-terminal-body {
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  max-height: 320px;
+  overflow-y: auto;
+  color: #e0e0e0;
+}
+
+.telemyr-terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #080808;
+  border-top: 1px solid #1a1a1a;
+}
+
+.telemyr-terminal-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #00ff66;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Footer & Let's Talk Section
+   ========================================================================== */
+.footer-contact {
+  padding: clamp(4rem, 8vw, 8rem) var(--page-gutter) 4rem;
+  background: var(--color-white);
+}
+
+.contact-headline {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  margin-bottom: 3rem;
+  line-height: 1;
+}
+
+.telemyr-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem 3rem;
+  max-width: 900px;
+  margin-bottom: 2.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-grey);
+}
+
+.form-input {
+  border: none;
+  border-bottom: 2px solid var(--color-rule-grey);
+  padding: 0.75rem 0;
+  font-size: 1.1rem;
+  font-family: inherit;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  border-bottom-color: var(--color-black);
+}
+
+.form-send-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2.5rem;
+  background: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-send-btn:hover {
+  background: var(--color-accent-lime);
+  color: var(--color-black);
+}
+
+.footer-meta {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-grey);
+}
+
+.footer-meta a {
+  color: var(--color-black);
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-meta a:hover {
+  text-decoration: underline;
+}
+
+.footer-brand-monumental {
+  font-size: clamp(3.5rem, 15vw, 16rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.85;
+  color: var(--color-black);
+  text-transform: lowercase;
+  border-top: var(--rule);
+  padding-top: 1.5rem;
+  margin-top: 4rem;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ==========================================================================
+   Modal Dialog
+   ========================================================================== */
+.telemyr-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.telemyr-modal-backdrop.hidden {
+  display: none;
+}
+
+.telemyr-modal-window {
+  background: var(--color-white);
+  border: var(--rule);
+  width: 100%;
+  max-width: 760px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--color-light-grey);
+  border: var(--rule);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+.modal-close-btn:hover {
+  background: var(--color-black);
+  color: var(--color-white);
 }

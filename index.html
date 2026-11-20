@@ -1,626 +1,397 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshit Mehta | Senior Full-Stack Engineer & Data Scientist</title>
-    
-    <!-- Meta & SEO -->
-    <meta name="description" content="Senior Full-Stack Engineer & Data Scientist specializing in scalable web applications, machine learning pipelines, statistical data analysis, and resilient system architectures.">
-    <meta name="keywords" content="Akshit Mehta, Full Stack Developer, Data Scientist, Machine Learning, Python, Next.js, React, TypeScript, SQL, Scikit-Learn, Pandas, PostgreSQL, Software Engineer">
-    <meta name="author" content="Akshit Mehta">
-    
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Akshit Mehta | Senior Full-Stack Engineer & Data Scientist">
-    <meta property="og:description" content="Explore production machine learning pipelines, full-stack Next.js applications, and systems engineering projects.">
-    <meta property="og:site_name" content="Akshit Mehta Portfolio">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-            },
-            colors: {
-              dark: '#080c14',
-              surface: '#0f172a',
-              card: '#111a2e',
-              border: '#1e293b'
-            }
-          }
-        }
-      }
-    </script>
-    
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshit Mehta — Data Science + AI &amp; Full-Stack Systems</title>
+  
+  <meta name="description" content="Portfolio of Akshit Mehta: Data Analyst transitioning into Data Science & AI, specializing in predictive machine learning pipelines, statistical modeling, and full-stack systems.">
+  <meta name="keywords" content="Akshit Mehta, Telemyr clone, Data Scientist, Machine Learning, Python, Next.js, Full Stack, Scikit-Learn, Pandas">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Akshit Mehta — Data Science + AI &amp; Full-Stack Systems">
+  <meta property="og:description" content="Predictive ML, statistical exploratory analysis, and full-stack edge web systems.">
+
+  <!-- Telemyr Minimalist Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-[#070a12] text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-slate-950 overflow-x-hidden min-h-screen relative bg-grid-pattern">
+<body>
 
-    <!-- Ambient Gradient Backdrops -->
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-sky-500/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
-    <div class="fixed bottom-0 right-0 w-[600px] h-[400px] bg-indigo-500/10 blur-[140px] rounded-full pointer-events-none -z-10"></div>
+  <!-- ========================================================================
+       Telemyr Fixed Nav Squares Dock
+       ======================================================================== -->
+  <nav class="nav-squares" aria-label="Main navigation">
+    <div class="nav-squares-row">
+      <!-- Home Square -->
+      <a class="nav-square active" href="#home" data-nav="home">
+        <span class="nav-square-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </span>
+        <span class="nav-square-label">Home</span>
+      </a>
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-4 z-50 max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-2xl px-5 h-16 flex items-center justify-between shadow-2xl shadow-black/40">
-            <!-- Brand -->
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-black text-slate-950 text-sm shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform">
-                    AM
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-extrabold tracking-tight text-white group-hover:text-sky-400 transition-colors text-sm sm:text-base">Akshit Mehta</span>
-                    <span class="text-[10px] font-mono text-slate-400 -mt-0.5">Full-Stack &amp; AI Engineer</span>
-                </div>
-            </a>
+      <!-- Story Square -->
+      <a class="nav-square" href="#our-story" data-nav="story">
+        <span class="nav-square-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </span>
+        <span class="nav-square-label">Story</span>
+      </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
-                <a href="#skills" class="hover:text-sky-400 transition-colors">Tech Stack</a>
-                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
-                <a href="#terminal" class="hover:text-sky-400 transition-colors">Terminal</a>
-                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
-            </nav>
+      <!-- Capabilities Square -->
+      <a class="nav-square" href="#capabilities" data-nav="capabilities">
+        <span class="nav-square-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+        </span>
+        <span class="nav-square-label">Expertise</span>
+      </a>
 
-            <!-- Actions -->
-            <div class="flex items-center gap-3">
-                <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-emerald"></span>
-                    Available for Work
-                </div>
+      <!-- Case Studies / Work Square -->
+      <a class="nav-square" href="#case-studies" data-nav="works">
+        <span class="nav-square-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </span>
+        <span class="nav-square-label">Work</span>
+      </a>
 
-                <a href="#contact" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md shadow-sky-500/20 active:scale-95">
-                    Let's Talk
-                </a>
+      <!-- Why Me Square -->
+      <a class="nav-square" href="#why-us" data-nav="why">
+        <span class="nav-square-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 16v-4"></path>
+            <path d="M12 8h.01"></path>
+          </svg>
+        </span>
+        <span class="nav-square-label">Why Me</span>
+      </a>
 
-                <!-- Mobile Menu Toggle Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white" aria-label="Toggle menu">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
+      <!-- Terminal Lab Square -->
+      <a class="nav-square" href="#terminal" data-nav="terminal">
+        <span class="nav-square-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </span>
+        <span class="nav-square-label">CLI Lab</span>
+      </a>
+
+      <!-- Let's Talk Square -->
+      <a class="nav-square" href="#contact" data-nav="contact">
+        <span class="nav-square-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+          </svg>
+        </span>
+        <span class="nav-square-label">Let's talk</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       Hero Section (Telemyr h-row)
+       ======================================================================== -->
+  <section class="h-row" id="home">
+    <div style="max-width: 1100px; margin: 0 auto; width: 100%;">
+      <h1 class="h-row__logo">akshit mehta</h1>
+      <p class="h-row__tag">Data Science + AI &amp; Full-Stack Systems</p>
+
+      <!-- 4 Core Service Cells with Lime Spots -->
+      <div class="h-row__cells">
+        <div class="h-row__cell">
+          <div class="h-row__spot"></div>
+          <span>Predictive Machine Learning</span>
         </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-nav" class="hidden md:hidden mt-2 bg-slate-900/95 backdrop-blur-lg border border-slate-800 rounded-2xl p-4 flex flex-col gap-3 text-sm font-semibold text-slate-300 shadow-2xl">
-            <a href="#about" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-sky-400 transition-all">About</a>
-            <a href="#skills" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-sky-400 transition-all">Tech Stack</a>
-            <a href="#projects" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-sky-400 transition-all">Projects</a>
-            <a href="#terminal" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-sky-400 transition-all">Interactive Terminal</a>
-            <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-sky-400 transition-all">Contact</a>
-            <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
-                <span class="text-xs text-emerald-400 font-mono">● Available for Work</span>
-                <a href="https://github.com/Mehtaji2004" target="_blank" class="text-xs text-sky-400 underline">github.com/Mehtaji2004</a>
-            </div>
+        <div class="h-row__cell">
+          <div class="h-row__spot"></div>
+          <span>Statistical EDA &amp; Testing</span>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 space-y-32">
-
-        <!-- Hero Section -->
-        <section id="about" class="relative flex flex-col items-center text-center">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-sky-400 text-xs font-semibold mb-6 shadow-sm">
-                <span class="text-base">⚡</span> Senior Full-Stack &amp; Machine Learning Engineer
-            </div>
-
-            <!-- Headline -->
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] max-w-4xl text-white">
-                Architecting High-Impact <span class="text-gradient">Intelligent Systems</span> &amp; Modern Web Apps.
-            </h1>
-
-            <!-- Animated Typing Subheadline -->
-            <div class="mt-6 text-lg sm:text-xl font-medium text-slate-300 flex items-center justify-center gap-2 min-h-[32px]">
-                <span class="text-slate-400">Specialized in</span>
-                <span id="dynamic-typewriter" class="text-sky-400 font-mono font-semibold"></span>
-                <span class="cursor-blink"></span>
-            </div>
-
-            <!-- Bio -->
-            <p class="mt-6 text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
-                Data Analyst transitioning into advanced Data Science &amp; AI, with deep full-stack engineering proficiency. I build end-to-end predictive machine learning pipelines, clean multi-modal data architectures, and responsive applications with Next.js, Python, and modern cloud ecosystems.
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <a href="#projects" class="px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-sky-500/25 flex items-center gap-2 hover:scale-[1.02] active:scale-95">
-                    <span>View Projects</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                    </svg>
-                </a>
-
-                <a href="https://github.com/Mehtaji2004" target="_blank" rel="noopener noreferrer" 
-                   class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700/80 font-semibold text-sm transition-all flex items-center gap-2 hover:border-slate-500">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                    </svg>
-                    <span>GitHub @Mehtaji2004</span>
-                </a>
-
-                <button id="copy-email-btn" type="button"
-                        class="px-5 py-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800 font-semibold text-sm transition-all flex items-center gap-2">
-                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                    </svg>
-                    <span>Copy Email</span>
-                </button>
-            </div>
-
-            <!-- Quick Tech Chips Bar -->
-            <div class="mt-14 pt-8 border-t border-slate-800/80 w-full flex flex-wrap items-center justify-center gap-3">
-                <span class="text-xs uppercase font-mono tracking-widest text-slate-400 mr-2">Core Tech:</span>
-                <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-sky-300">🐍 Python 3.x</span>
-                <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-emerald-300">⚡ Scikit-Learn</span>
-                <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-cyan-300">📊 Pandas &amp; NumPy</span>
-                <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-indigo-300">▲ Next.js &amp; React</span>
-                <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-blue-300">📘 TypeScript</span>
-                <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-amber-300">🐘 PostgreSQL</span>
-                <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-xs font-mono text-rose-300">⚙️ C++ / SFML</span>
-            </div>
-        </section>
-
-        <!-- Engineering Metrics & Impact -->
-        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="glow-card bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
-                <div class="text-3xl sm:text-4xl font-black text-white text-gradient">7+</div>
-                <div class="text-xs uppercase tracking-wider font-bold text-sky-400 mt-2">Shipped Projects</div>
-                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                    End-to-end applications across Machine Learning, Analytics, Full-Stack Next.js, and C++ Systems.
-                </p>
-            </div>
-
-            <div class="glow-card bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
-                <div class="text-3xl sm:text-4xl font-black text-emerald-400">91.4%</div>
-                <div class="text-xs uppercase tracking-wider font-bold text-emerald-400 mt-2">ML Model AUC-ROC</div>
-                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                    High precision logistics delay classifier with optimized feature pipelines and business KPIs.
-                </p>
-            </div>
-
-            <div class="glow-card bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
-                <div class="text-3xl sm:text-4xl font-black text-indigo-400">10+</div>
-                <div class="text-xs uppercase tracking-wider font-bold text-indigo-400 mt-2">Core Technologies</div>
-                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                    Full lifecycle stack mastery from data preprocessing &amp; statistical EDA to frontend edge deployment.
-                </p>
-            </div>
-
-            <div class="glow-card bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
-                <div class="text-3xl sm:text-4xl font-black text-amber-400">100%</div>
-                <div class="text-xs uppercase tracking-wider font-bold text-amber-400 mt-2">Open &amp; Reproducible</div>
-                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                    Clean git repositories with modular structures, reproducible notebooks, and live web deployments.
-                </p>
-            </div>
-        </section>
-
-        <!-- Tech Stack Matrix -->
-        <section id="skills" class="space-y-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-sky-400">Technical Capability</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-1">Skills &amp; Technology Matrix</h2>
-                </div>
-                <p class="text-sm text-slate-400 max-w-md">
-                    Engineered to handle both data-intensive computational loads and modern, reactive user interfaces.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Category 1: Languages -->
-                <div class="glow-card bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 font-mono text-base font-bold">
-                            &lt;/&gt;
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-base">Languages</h3>
-                            <p class="text-[11px] text-slate-400">Primary programming</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2.5 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                        <li class="flex items-center justify-between">
-                            <span>Python 3.x</span>
-                            <span class="text-sky-400 font-mono font-semibold">Advanced</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>SQL (PostgreSQL)</span>
-                            <span class="text-sky-400 font-mono font-semibold">Proficient</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>TypeScript &amp; JS</span>
-                            <span class="text-sky-400 font-mono font-semibold">Proficient</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>C++ (SFML/OOP)</span>
-                            <span class="text-slate-400 font-mono">Competent</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Category 2: Data Science & AI -->
-                <div class="glow-card bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-mono text-base font-bold">
-                            🧠
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-base">Data Science &amp; AI</h3>
-                            <p class="text-[11px] text-slate-400">Machine learning &amp; stats</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2.5 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                        <li class="flex items-center justify-between">
-                            <span>Pandas &amp; NumPy</span>
-                            <span class="text-emerald-400 font-mono font-semibold">Advanced</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>Scikit-Learn</span>
-                            <span class="text-emerald-400 font-mono font-semibold">Advanced</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>Matplotlib &amp; Seaborn</span>
-                            <span class="text-emerald-400 font-mono font-semibold">Advanced</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>SciPy Hypothesis Tests</span>
-                            <span class="text-emerald-400 font-mono font-semibold">Proficient</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Category 3: Full Stack Web -->
-                <div class="glow-card bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-mono text-base font-bold">
-                            ▲
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-base">Full-Stack Web</h3>
-                            <p class="text-[11px] text-slate-400">Modern frontend &amp; APIs</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2.5 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                        <li class="flex items-center justify-between">
-                            <span>Next.js &amp; React</span>
-                            <span class="text-indigo-400 font-mono font-semibold">Proficient</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>Tailwind CSS</span>
-                            <span class="text-indigo-400 font-mono font-semibold">Advanced</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>RESTful APIs</span>
-                            <span class="text-indigo-400 font-mono font-semibold">Proficient</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>Node.js / Express</span>
-                            <span class="text-slate-400 font-mono">Proficient</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Category 4: DevOps & Tools -->
-                <div class="glow-card bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-mono text-base font-bold">
-                            ⚙️
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-base">DevOps &amp; Tools</h3>
-                            <p class="text-[11px] text-slate-400">CI/CD, Versioning &amp; Data</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2.5 text-xs text-slate-300 pt-2 border-t border-slate-800">
-                        <li class="flex items-center justify-between">
-                            <span>Git &amp; GitHub</span>
-                            <span class="text-amber-400 font-mono font-semibold">Advanced</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>PostgreSQL / SQLite</span>
-                            <span class="text-amber-400 font-mono font-semibold">Proficient</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>Vercel Edge Cloud</span>
-                            <span class="text-amber-400 font-mono font-semibold">Proficient</span>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <span>Linux Shell / Bash</span>
-                            <span class="text-slate-400 font-mono">Proficient</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Showcase Section -->
-        <section id="projects" class="space-y-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div>
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-sky-400">Portfolio Repositories</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-1">Featured Engineering Projects</h2>
-                    <p class="text-sm text-slate-400 mt-2 max-w-xl">
-                        Production-grade codebases highlighting predictive modeling, statistical exploratory analysis, full-stack edge web applications, and low-level game loops.
-                    </p>
-                </div>
-
-                <!-- Category Filter Pills -->
-                <div class="flex flex-wrap gap-2">
-                    <button type="button" data-filter="all" 
-                            class="px-4 py-2 rounded-xl text-xs font-semibold bg-sky-500 text-slate-950 border border-transparent shadow-lg shadow-sky-500/20 transition-all">
-                        All Projects (7)
-                    </button>
-                    <button type="button" data-filter="ml" 
-                            class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/80 text-slate-400 border border-slate-800 hover:border-slate-700 hover:text-white transition-all">
-                        Machine Learning
-                    </button>
-                    <button type="button" data-filter="analytics" 
-                            class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/80 text-slate-400 border border-slate-800 hover:border-slate-700 hover:text-white transition-all">
-                        Data Analytics &amp; EDA
-                    </button>
-                    <button type="button" data-filter="fullstack" 
-                            class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/80 text-slate-400 border border-slate-800 hover:border-slate-700 hover:text-white transition-all">
-                        Full-Stack Web
-                    </button>
-                    <button type="button" data-filter="systems" 
-                            class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/80 text-slate-400 border border-slate-800 hover:border-slate-700 hover:text-white transition-all">
-                        Systems &amp; Game Dev
-                    </button>
-                </div>
-            </div>
-
-            <!-- Dynamic Projects Grid -->
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Rendered dynamically by assets/js/main.js -->
-            </div>
-        </section>
-
-        <!-- Senior Interactive Terminal Emulator -->
-        <section id="terminal" class="space-y-6">
-            <div class="text-center max-w-xl mx-auto">
-                <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">Interactive CLI</span>
-                <h2 class="text-3xl font-black text-white mt-1">Senior Developer Terminal</h2>
-                <p class="text-xs text-slate-400 mt-2">
-                    Type commands like <span class="text-sky-400 font-mono font-bold">help</span>, <span class="text-sky-400 font-mono font-bold">skills</span>, <span class="text-sky-400 font-mono font-bold">projects</span>, or <span class="text-emerald-400 font-mono font-bold">sudo hire</span>.
-                </p>
-            </div>
-
-            <div class="terminal-window max-w-3xl mx-auto overflow-hidden">
-                <!-- Header -->
-                <div class="terminal-header px-4 py-3 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <div class="terminal-dot bg-rose-500"></div>
-                        <div class="terminal-dot bg-amber-500"></div>
-                        <div class="terminal-dot bg-emerald-500"></div>
-                        <span class="text-xs font-mono text-slate-400 ml-2">akshit@portfolio:~ (zsh)</span>
-                    </div>
-                    <span class="text-[11px] font-mono text-slate-400">interactive session</span>
-                </div>
-
-                <!-- Output Area -->
-                <div id="terminal-output" class="p-5 max-h-[360px] overflow-y-auto text-xs space-y-2 font-mono">
-                    <div class="text-slate-400">
-                        Welcome to Akshit Mehta's developer shell v2.4.0.<br>
-                        Type <span class="text-sky-400 font-bold">help</span> to inspect capabilities or <span class="text-emerald-400 font-bold">sudo hire</span> to initiate interview.
-                    </div>
-                </div>
-
-                <!-- Input Prompt -->
-                <div class="px-5 py-3 border-t border-slate-800/80 bg-slate-950 flex items-center gap-2">
-                    <span class="text-emerald-400 font-mono font-bold text-xs shrink-0">akshit@portfolio:~$</span>
-                    <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" 
-                           placeholder="Type command and hit Enter..."
-                           class="w-full bg-transparent text-white font-mono text-xs focus:outline-none placeholder-slate-600">
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact & Collaboration Section -->
-        <section id="contact" class="space-y-10">
-            <div class="text-center max-w-2xl mx-auto">
-                <span class="text-xs font-mono font-bold uppercase tracking-widest text-sky-400">Get In Touch</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mt-1">Let's Discuss New Opportunities</h2>
-                <p class="text-sm text-slate-400 mt-2">
-                    Whether you are looking for a Data Science / Machine Learning engineer or a Full-Stack developer to build high-scale solutions, I'd love to connect.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-                <!-- Left: Contact Details Card -->
-                <div class="lg:col-span-2 glow-card bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
-                    <div>
-                        <h3 class="text-xl font-bold text-white">Direct Connect</h3>
-                        <p class="text-xs text-slate-400 mt-1">Guaranteed response within 24 hours.</p>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <span class="text-xs font-mono text-slate-400">Email Address</span>
-                                <a href="mailto:mehtaakshit65@gmail.com" class="block text-sm font-semibold text-white hover:text-sky-400 transition-colors">
-                                    mehtaakshit65@gmail.com
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <span class="text-xs font-mono text-slate-400">GitHub Profile</span>
-                                <a href="https://github.com/Mehtaji2004" target="_blank" rel="noopener noreferrer" class="block text-sm font-semibold text-white hover:text-sky-400 transition-colors">
-                                    github.com/Mehtaji2004
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <span class="text-xs font-mono text-slate-400">Work Preferences</span>
-                                <span class="block text-sm font-semibold text-white">
-                                    Open to Worldwide Remote &amp; Hybrid
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-4 border-t border-slate-800">
-                        <button type="button" onclick="document.getElementById('copy-email-btn').click()" 
-                                class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition-all flex items-center justify-center gap-2">
-                            <span>Copy Email Address</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right: Interactive Contact Form -->
-                <div class="lg:col-span-3 glow-card bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
-                    <form id="contact-form" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-mono text-slate-400 mb-1.5">Your Name *</label>
-                                <input type="text" id="contact-name" required placeholder="Jane Doe"
-                                       class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-mono text-slate-400 mb-1.5">Your Email *</label>
-                                <input type="email" id="contact-email" required placeholder="jane@example.com"
-                                       class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-mono text-slate-400 mb-1.5">Subject</label>
-                            <input type="text" id="contact-subject" placeholder="Opportunity / Project Collaboration"
-                                   class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-mono text-slate-400 mb-1.5">Your Message *</label>
-                            <textarea id="contact-message" required rows="4" placeholder="Hello Akshit, we came across your projects..."
-                                      class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors resize-none"></textarea>
-                        </div>
-
-                        <button type="submit" 
-                                class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-sky-500/20 active:scale-[0.99] flex items-center justify-center gap-2">
-                            <span>Send Message Directly</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="mt-32 border-t border-slate-800/80 bg-slate-950/60 py-10 px-4">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-sky-500"></span>
-                <span>Designed &amp; Engineered by <strong class="text-white">Akshit Mehta</strong></span>
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="https://github.com/Mehtaji2004" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors">GitHub</a>
-                <a href="#about" class="hover:text-sky-400 transition-colors">Top</a>
-                <a href="mailto:mehtaakshit65@gmail.com" class="hover:text-sky-400 transition-colors">Email</a>
-            </div>
-            <div>
-                © 2026 Akshit Mehta. All rights reserved.
-            </div>
+        <div class="h-row__cell">
+          <div class="h-row__spot"></div>
+          <span>High-Throughput ETL</span>
         </div>
-    </footer>
-
-    <!-- Project Deep-Dive Modal -->
-    <div id="project-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
-        <div class="bg-slate-900 border border-slate-700/80 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 shadow-2xl relative">
-            <!-- Close Button -->
-            <button id="close-modal-btn" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-all">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-
-            <!-- Header -->
-            <div>
-                <span id="modal-category" class="text-xs font-mono font-bold uppercase tracking-widest text-sky-400"></span>
-                <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold text-white mt-1"></h3>
-                <div class="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    <span id="modal-metrics"></span>
-                </div>
-            </div>
-
-            <!-- Overview -->
-            <div>
-                <h4 class="text-xs uppercase font-mono font-bold text-slate-400 mb-2">Technical Overview</h4>
-                <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed"></p>
-            </div>
-
-            <!-- Architecture Flow -->
-            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5">
-                <h4 class="text-xs uppercase font-mono font-bold text-sky-400">System Architecture Flow</h4>
-                <p id="modal-arch" class="text-xs font-mono text-slate-300 leading-relaxed"></p>
-            </div>
-
-            <!-- Key Features -->
-            <div>
-                <h4 class="text-xs uppercase font-mono font-bold text-slate-400 mb-2">Key Engineering Features</h4>
-                <ul id="modal-features" class="space-y-2"></ul>
-            </div>
-
-            <!-- Technologies -->
-            <div>
-                <h4 class="text-xs uppercase font-mono font-bold text-slate-400 mb-2">Technologies &amp; Libraries</h4>
-                <div id="modal-tech" class="flex flex-wrap gap-2"></div>
-            </div>
-
-            <!-- Modal Action Links -->
-            <div id="modal-links" class="pt-4 border-t border-slate-800 flex items-center gap-3 flex-wrap"></div>
+        <div class="h-row__cell">
+          <div class="h-row__spot"></div>
+          <span>Full-Stack Edge Web</span>
         </div>
+      </div>
+
+      <div class="h-row__partners">
+        <p class="h-row__partners-title">
+          Specializing in Python • Scikit-Learn • Next.js • PostgreSQL • C++ Systems
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Our Story Section (Telemyr about-story)
+       ======================================================================== -->
+  <section class="about-story" id="our-story">
+    <h2 class="about-heading">
+      Engineered by <span class="story-chip bg-lime">Akshit Mehta</span>, a Data Analyst transitioning into advanced <span class="story-chip bg-yellow">Data Science &amp; AI</span>, combining empirical statistical rigor with production <span class="story-chip bg-lilac">full-stack web platforms</span>. We build reproducible predictive models, automated ETL data hygiene pipelines, and edge-deployed software that scales cleanly while keeping complexity small.
+    </h2>
+  </section>
+
+  <!-- ========================================================================
+       Capabilities / Engineering Background (Telemyr capabilities)
+       ======================================================================== -->
+  <section class="studio-section" id="capabilities">
+    <span class="section-label">01 / Technical Matrix</span>
+    <h2 class="section-title">Core Disciplines &amp; Architecture</h2>
+
+    <div class="capabilities-grid">
+      <!-- 01 Machine Learning -->
+      <div class="capability-card">
+        <div class="capability-num">01 / 04</div>
+        <h3 class="capability-heading">Predictive Machine Learning</h3>
+        <ul class="capability-list">
+          <li>Classification &amp; Regression Models</li>
+          <li>Feature Engineering &amp; Selection</li>
+          <li>AUC-ROC &amp; F1-Score Optimization</li>
+          <li>Scikit-Learn, Pandas, NumPy, XGBoost</li>
+          <li>Deterministic Validation Pipelines</li>
+        </ul>
+      </div>
+
+      <!-- 02 Statistical EDA -->
+      <div class="capability-card">
+        <div class="capability-num">02 / 04</div>
+        <h3 class="capability-heading">Statistical EDA &amp; Analytics</h3>
+        <ul class="capability-list">
+          <li>Hypothesis Testing (ANOVA, Mann-Whitney U)</li>
+          <li>Multi-Dimensional Visualization (Seaborn)</li>
+          <li>Outlier Detection (IQR &amp; Z-Score)</li>
+          <li>Distribution Fitting &amp; SciPy Stats</li>
+          <li>Publication-Quality 10-Chart Suites</li>
+        </ul>
+      </div>
+
+      <!-- 03 ETL & Data Hygiene -->
+      <div class="capability-card">
+        <div class="capability-num">03 / 04</div>
+        <h3 class="capability-heading">Data Engineering &amp; ETL</h3>
+        <ul class="capability-list">
+          <li>Automated Schema Validation</li>
+          <li>Context-Aware Imputation Strategies</li>
+          <li>Winsorization &amp; Anomaly Scrubbing</li>
+          <li>Parquet &amp; Normalized SQL Schemas</li>
+          <li>Zero Data Leakage Guarantees</li>
+        </ul>
+      </div>
+
+      <!-- 04 Full-Stack Systems -->
+      <div class="capability-card">
+        <div class="capability-num">04 / 04</div>
+        <h3 class="capability-heading">Full-Stack &amp; Systems</h3>
+        <ul class="capability-list">
+          <li>Next.js 14 App Router &amp; TypeScript</li>
+          <li>Tailwind CSS &amp; Reactive UI Systems</li>
+          <li>PostgreSQL, SQLite &amp; RESTful APIs</li>
+          <li>C++ Low-Level Systems &amp; SFML Loops</li>
+          <li>Vercel Edge Cloud &amp; GitHub Actions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Case Studies / Works Section (Telemyr case-studies)
+       ======================================================================== -->
+  <section class="studio-section" id="case-studies">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+      <div>
+        <span class="section-label">02 / Portfolio Repositories</span>
+        <h2 class="section-title" style="margin-bottom: 0;">Selected Case Studies</h2>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--color-text-grey); max-width: 400px;">
+        Click any case study to inspect technical architecture, system data flows, and source code.
+      </p>
     </div>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="bg-slate-900 border border-sky-500/40 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 backdrop-blur-md">
-            <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
-            <span id="toast-message" class="text-xs font-medium">Notification</span>
+    <!-- Editorial Works Table rendered via assets/js/main.js -->
+    <div class="works-list" id="works-container"></div>
+  </section>
+
+  <!-- ========================================================================
+       Why Me / Principles Section (Telemyr why-us)
+       ======================================================================== -->
+  <section class="studio-section" id="why-us">
+    <span class="section-label">03 / Operational Philosophy</span>
+    <h2 class="section-title">Why Work With Me</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-top">01 / EMPIRICAL RIGOR</div>
+        <div>
+          <h3 class="why-card-title">Data-Backed Decisions</h3>
+          <p class="why-card-text">Every modeling choice is validated with statistical significance, cross-validation metrics, and concrete cost-benefit analyses rather than intuitive guesses.</p>
         </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-top">02 / ZERO LEAKAGE</div>
+        <div>
+          <h3 class="why-card-title">Production Integrity</h3>
+          <p class="why-card-text">Strict separation between training distributions and live validation prevents overfitting and guarantees deterministic real-world performance.</p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-top">03 / FULL LIFECYCLE</div>
+        <div>
+          <h3 class="why-card-title">End-to-End Delivery</h3>
+          <p class="why-card-text">Bridging the entire divide: from exploratory data analysis and Python machine learning pipelines to high-performance responsive web user experiences.</p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-top">04 / EXECUTION SPEED</div>
+        <div>
+          <h3 class="why-card-title">Clean, Modular Code</h3>
+          <p class="why-card-text">Well-documented repositories with automated CI/CD deployment pipelines, reproducible Jupyter notebooks, and production maintainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Developer CLI Terminal Lab
+       ======================================================================== -->
+  <section class="studio-section" id="terminal">
+    <span class="section-label">04 / Developer Console</span>
+    <h2 class="section-title">Interactive Terminal Lab</h2>
+
+    <div class="telemyr-terminal">
+      <div class="telemyr-terminal-header">
+        <span>akshit@telemyr:~ (zsh)</span>
+        <span>type 'help' to inspect commands</span>
+      </div>
+      <div class="telemyr-terminal-body" id="terminal-output">
+        <div>Welcome to Akshit Mehta's studio shell v3.0.0 (Telemyr Edition).</div>
+        <div>Type <strong style="color:#AFF005">help</strong> for available commands.</div>
+      </div>
+      <div class="telemyr-terminal-input-row">
+        <span style="color:#AFF005; font-size: 0.85rem;">akshit@telemyr:~$</span>
+        <input type="text" id="terminal-input" class="telemyr-terminal-input" autocomplete="off" spellcheck="false" placeholder="Type command here and hit Enter...">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer & "Let's Talk" Contact Section (Telemyr footer-contact)
+       ======================================================================== -->
+  <footer class="footer-contact" id="contact">
+    <h2 class="contact-headline">Let's talk.</h2>
+
+    <form id="telemyr-contact-form">
+      <div class="telemyr-form-grid">
+        <div class="form-field">
+          <label class="form-label" for="tf-company">Company or Project</label>
+          <input class="form-input" id="tf-company" type="text" placeholder="Acme Inc. / Independent">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="tf-name">Your Name *</label>
+          <input class="form-input" id="tf-name" type="text" required placeholder="Jane Doe">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="tf-email">Your Email *</label>
+          <input class="form-input" id="tf-email" type="email" required placeholder="jane@example.com">
+        </div>
+        <div class="form-field" style="grid-column: 1 / -1;">
+          <label class="form-label" for="tf-message">Message *</label>
+          <input class="form-input" id="tf-message" type="text" required placeholder="Tell me about what you are building...">
+        </div>
+      </div>
+
+      <button class="form-send-btn" type="submit">
+        <span>Send Message</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2.5 8h10.5M8.75 3.75 13 8l-4.25 4.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
+
+    <div class="footer-meta">
+      <div>
+        <strong>Email:</strong> <a href="mailto:mehtaakshit65@gmail.com">mehtaakshit65@gmail.com</a>
+      </div>
+      <div>
+        <strong>GitHub:</strong> <a href="https://github.com/Mehtaji2004" target="_blank" rel="noopener noreferrer">@Mehtaji2004</a>
+      </div>
+      <div>
+        <strong>Location:</strong> India • Open to Remote Worldwide &amp; Hybrid
+      </div>
+      <div>
+        © 2026 Akshit Mehta.
+      </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/projects-data.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Telemyr Giant Monumental Wordmark Footer -->
+    <div class="footer-brand-monumental">
+      akshit mehta
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Telemyr Project Deep-Dive Modal
+       ======================================================================== -->
+  <div id="telemyr-modal" class="telemyr-modal-backdrop hidden">
+    <div class="telemyr-modal-window">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close dialog">×</button>
+      
+      <span id="modal-category" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-grey);"></span>
+      <h3 id="modal-title" style="font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 600; letter-spacing: -0.04em; margin: 0.5rem 0 1rem;"></h3>
+      
+      <div style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--color-accent-lime); font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem;">
+        <span id="modal-metrics"></span>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: var(--color-text-grey); margin-bottom: 0.5rem;">Technical Overview</h4>
+        <p id="modal-desc" style="font-size: 0.95rem; line-height: 1.6; color: #333;"></p>
+      </div>
+
+      <div style="background: var(--color-light-grey); border: var(--rule); padding: 1.25rem; margin-bottom: 1.5rem;">
+        <h4 style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; font-family: var(--font-mono); margin-bottom: 0.35rem;">System Architecture Flow</h4>
+        <p id="modal-arch" style="font-size: 0.85rem; font-family: var(--font-mono); color: #222; line-height: 1.5;"></p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: var(--color-text-grey); margin-bottom: 0.5rem;">Key Engineering Features</h4>
+        <ul id="modal-features" style="list-style: none;"></ul>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: var(--color-text-grey); margin-bottom: 0.5rem;">Technologies</h4>
+        <div id="modal-tech"></div>
+      </div>
+
+      <div id="modal-links" style="border-top: var(--rule); padding-top: 1.5rem;"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/projects-data.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
