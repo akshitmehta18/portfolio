@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Akshit Mehta - Senior Full-Stack & Data Science Portfolio Stylesheet
+   ========================================================================== */
+
+:root {
+  --bg-dark: #0a0d14;
+  --bg-card: #111726;
+  --bg-card-hover: #162035;
+  --bg-glass: rgba(17, 23, 38, 0.75);
+  --border-glass: rgba(134, 151, 187, 0.15);
+  --border-glow: rgba(56, 189, 248, 0.35);
+  
+  --primary: #38bdf8;         /* Cyan */
+  --primary-glow: rgba(56, 189, 248, 0.25);
+  --accent-emerald: #10b981;  /* Emerald */
+  --accent-indigo: #818cf8;   /* Indigo */
+  --accent-amber: #f59e0b;    /* Amber */
+
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glowing text and gradient utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 20%, #38bdf8 60%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.05), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.glow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Radar & background grid */
+.bg-grid-pattern {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.06) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%);
+}
+
+/* Terminal Styling */
+.terminal-window {
+  background: #090d16;
+  border: 1px solid rgba(134, 151, 187, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+.terminal-header {
+  background: #111726;
+  border-bottom: 1px solid rgba(134, 151, 187, 0.15);
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: #38bdf8;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Floating animation */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Toast notification */
+#toast {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Interactive Badge Pulse */
+.pulse-emerald {
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}

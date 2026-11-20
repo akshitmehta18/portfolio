@@ -1,0 +1,22 @@
+{
+  "name": "akshit-mehta-portfolio",
+  "version": "2.0.0",
+  "description": "Production Portfolio of Akshit Mehta - Senior Full-Stack Engineer & Data Scientist",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "serve": "python3 -m http.server 3000",
+    "deploy:vercel": "npx vercel --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "full-stack",
+    "data-science",
+    "machine-learning",
+    "python",
+    "nextjs",
+    "typescript"
+  ],
+  "author": "Akshit Mehta <mehtaakshit65@gmail.com>",
+  "license": "MIT"
+}
