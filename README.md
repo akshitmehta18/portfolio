@@ -1,11 +1,15 @@
 # Akshit Mehta — Portfolio & Technical Showcase
 
+[![Live Deployment](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-2ea44f?style=for-the-badge&logo=github)](https://mehtaji2004.github.io/portfolio/)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMehtaji2004%2Fportfolio)
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-emerald.svg)](#)
 [![Stack](https://img.shields.io/badge/Stack-Full--Stack%20%7C%20Data%20Science%20%7C%20AI-sky.svg)](#)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](#)
 
 > **Senior Full-Stack Engineer & Data Scientist**  
 > Turning complex data into actionable machine learning pipelines and architecting resilient web applications.
+
+**Live URL**: [https://mehtaji2004.github.io/portfolio/](https://mehtaji2004.github.io/portfolio/)
+**Repository**: [https://github.com/Mehtaji2004/portfolio](https://github.com/Mehtaji2004/portfolio)
 
 ---
 
