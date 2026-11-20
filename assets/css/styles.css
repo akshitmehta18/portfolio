@@ -105,12 +105,13 @@ body {
   color: var(--color-black);
   text-decoration: none;
   background: var(--color-white);
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease, transform 0.2s ease;
   user-select: none;
 }
 
 .nav-square:hover {
   background: var(--color-light-grey);
+  transform: translateY(-2px);
 }
 
 .nav-square.active,
@@ -129,6 +130,10 @@ body {
   height: var(--nav-squares-icon);
   display: grid;
   place-items: center;
+  transition: transform 0.2s ease;
+}
+.nav-square:hover .nav-square-icon {
+  transform: scale(1.1);
 }
 .nav-square-icon svg {
   width: 100%;
@@ -165,7 +170,7 @@ body {
 }
 
 /* ==========================================================================
-   Hero Row (Telemyr h-row)
+   Hero Row (Telemyr h-row with Kinetic Canvas)
    ========================================================================== */
 .h-row {
   min-height: calc(100vh - var(--nav-squares-size));
@@ -178,6 +183,26 @@ body {
   border-bottom: var(--rule);
   position: relative;
   background: var(--color-white);
+  overflow: hidden;
+}
+
+/* Interactive Canvas Ink Layer */
+.h-row__ink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.h-row__content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .h-row__logo {
@@ -188,6 +213,7 @@ body {
   color: var(--color-black);
   text-transform: lowercase;
   margin-bottom: 1.25rem;
+  transition: transform 0.3s ease;
 }
 
 .h-row__tag {
@@ -203,15 +229,15 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
-  max-w: 900px;
-  margin-bottom: 3rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
 }
 
 .h-row__cell {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.6rem 1.25rem;
+  padding: 0.65rem 1.35rem;
   background: var(--color-light-grey);
   border: var(--rule);
   border-radius: 999px;
@@ -219,7 +245,7 @@ body {
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--color-black);
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
 }
 
@@ -227,6 +253,7 @@ body {
   background: var(--color-black);
   color: var(--color-white);
   border-color: var(--color-black);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .h-row__spot {
@@ -234,6 +261,13 @@ body {
   height: 8px;
   border-radius: 50%;
   background: var(--color-accent-lime);
+  box-shadow: 0 0 8px rgba(175, 240, 5, 0.6);
+  animation: spotPulse 2s infinite ease-in-out;
+}
+
+@keyframes spotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
 }
 
 .h-row__partners {
@@ -241,6 +275,7 @@ body {
   padding-top: 1.5rem;
   width: 100%;
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .h-row__partners-title {
@@ -263,7 +298,7 @@ body {
 .about-heading {
   font-size: clamp(1.75rem, 4.2vw, 4rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.04em;
   color: var(--color-black);
   max-width: 1200px;
@@ -281,6 +316,10 @@ body {
   vertical-align: baseline;
   white-space: nowrap;
   letter-spacing: -0.02em;
+  transition: transform 0.2s ease;
+}
+.story-chip:hover {
+  transform: scale(1.04);
 }
 
 .story-chip.bg-lime {
@@ -341,7 +380,7 @@ body {
   border-bottom: var(--rule);
   padding: 2.5rem 2rem;
   background: var(--color-white);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .capability-card:hover {
@@ -396,7 +435,7 @@ body {
   border-bottom: var(--rule);
   text-decoration: none;
   color: var(--color-black);
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
@@ -464,6 +503,11 @@ body {
   align-items: center;
   justify-content: flex-end;
   gap: 0.4rem;
+  transition: transform 0.2s ease;
+}
+.work-item:hover .work-item-action {
+  transform: translateX(4px);
+  color: #000;
 }
 
 /* ==========================================================================
@@ -483,12 +527,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 280px;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .why-card:hover {
   background: var(--color-white);
   border-color: var(--color-black);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
 }
 
 .why-card-top {
@@ -512,44 +558,101 @@ body {
 }
 
 /* ==========================================================================
-   Minimal Terminal Emulator
+   Upgraded Telemyr Interactive Terminal
    ========================================================================== */
-.telemyr-terminal {
+.terminal-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.terminal-quick-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.term-chip {
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--color-light-grey);
   border: var(--rule);
-  background: var(--color-black);
-  color: #00ff66;
+  color: var(--color-black);
   font-family: var(--font-mono);
-  border-radius: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.term-chip:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+  transform: translateY(-1px);
+}
+
+.term-chip.chip-lime {
+  background: var(--color-accent-lime);
+  border-color: #9fe200;
+}
+.term-chip.chip-lime:hover {
+  background: var(--color-black);
+  color: var(--color-accent-lime);
+}
+
+.telemyr-terminal {
+  border: 1px solid #222;
+  background: #0a0e14;
+  color: #e5e7eb;
+  font-family: var(--font-mono);
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
 }
 
 .telemyr-terminal-header {
-  background: #111;
-  border-bottom: 1px solid #222;
+  background: #111823;
+  border-bottom: 1px solid #1f2937;
   padding: 0.75rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.75rem;
-  color: #888;
+  font-size: 0.8rem;
+  color: #9ca3af;
 }
+
+.terminal-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.term-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
 
 .telemyr-terminal-body {
   padding: 1.5rem;
-  font-size: 0.8rem;
-  line-height: 1.6;
-  max-height: 320px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  max-height: 380px;
   overflow-y: auto;
-  color: #e0e0e0;
+  color: #f3f4f6;
 }
 
 .telemyr-terminal-input-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: #080808;
-  border-top: 1px solid #1a1a1a;
+  gap: 0.65rem;
+  padding: 0.9rem 1.5rem;
+  background: #06090e;
+  border-top: 1px solid #1f2937;
 }
 
 .telemyr-terminal-input {
@@ -557,9 +660,13 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  color: #00ff66;
+  color: #38bdf8;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.telemyr-terminal-input::placeholder {
+  color: #4b5563;
 }
 
 /* ==========================================================================
@@ -677,8 +784,8 @@ body {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -697,6 +804,7 @@ body {
   overflow-y: auto;
   padding: clamp(2rem, 5vw, 3.5rem);
   position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .modal-close-btn {
@@ -711,6 +819,7 @@ body {
   place-items: center;
   cursor: pointer;
   font-size: 1.25rem;
+  border-radius: 4px;
 }
 .modal-close-btn:hover {
   background: var(--color-black);

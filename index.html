@@ -108,10 +108,13 @@
   </nav>
 
   <!-- ========================================================================
-       Hero Section (Telemyr h-row)
+       Hero Section (Telemyr h-row with Kinetic Canvas Animation)
        ======================================================================== -->
   <section class="h-row" id="home">
-    <div style="max-width: 1100px; margin: 0 auto; width: 100%;">
+    <!-- Interactive Canvas Layer -->
+    <canvas class="h-row__ink" id="hero-canvas"></canvas>
+
+    <div class="h-row__content">
       <h1 class="h-row__logo">akshit mehta</h1>
       <p class="h-row__tag">Data Science + AI &amp; Full-Stack Systems</p>
 
@@ -275,24 +278,52 @@
   </section>
 
   <!-- ========================================================================
-       Developer CLI Terminal Lab
+       Upgraded Developer CLI Terminal Lab
        ======================================================================== -->
   <section class="studio-section" id="terminal">
-    <span class="section-label">04 / Developer Console</span>
-    <h2 class="section-title">Interactive Terminal Lab</h2>
+    <div class="terminal-wrapper">
+      <span class="section-label">04 / Developer Console</span>
+      <h2 class="section-title">Interactive Terminal Lab</h2>
+      <p style="font-size: 0.95rem; color: var(--color-text-grey); margin-top: -1.75rem; margin-bottom: 1.5rem;">
+        Type commands or click any quick-action shortcut button below:
+      </p>
 
-    <div class="telemyr-terminal">
-      <div class="telemyr-terminal-header">
-        <span>akshit@telemyr:~ (zsh)</span>
-        <span>type 'help' to inspect commands</span>
+      <!-- Quick Action Command Chips -->
+      <div class="terminal-quick-chips">
+        <button class="term-chip chip-lime" data-cmd="help">help</button>
+        <button class="term-chip" data-cmd="hey there">hey there 👋</button>
+        <button class="term-chip" data-cmd="about">about</button>
+        <button class="term-chip" data-cmd="skills">skills</button>
+        <button class="term-chip" data-cmd="projects">projects</button>
+        <button class="term-chip" data-cmd="stats">stats</button>
+        <button class="term-chip" data-cmd="contact">contact</button>
+        <button class="term-chip chip-lime" data-cmd="hire">hire</button>
+        <button class="term-chip" data-cmd="clear">clear</button>
       </div>
-      <div class="telemyr-terminal-body" id="terminal-output">
-        <div>Welcome to Akshit Mehta's studio shell v3.0.0 (Telemyr Edition).</div>
-        <div>Type <strong style="color:#AFF005">help</strong> for available commands.</div>
-      </div>
-      <div class="telemyr-terminal-input-row">
-        <span style="color:#AFF005; font-size: 0.85rem;">akshit@telemyr:~$</span>
-        <input type="text" id="terminal-input" class="telemyr-terminal-input" autocomplete="off" spellcheck="false" placeholder="Type command here and hit Enter...">
+
+      <!-- Upgraded Terminal Window -->
+      <div class="telemyr-terminal">
+        <div class="telemyr-terminal-header">
+          <div class="terminal-dots">
+            <span class="term-dot dot-red"></span>
+            <span class="term-dot dot-yellow"></span>
+            <span class="term-dot dot-green"></span>
+            <span style="margin-left: 8px; font-weight: 500;">akshit@telemyr:~ (zsh)</span>
+          </div>
+          <span style="color: #6b7280; font-size: 0.75rem;">interactive developer shell</span>
+        </div>
+
+        <div class="telemyr-terminal-body" id="terminal-output">
+          <div style="color: #AFF005; font-weight: 600;">Welcome to Akshit Mehta's studio shell v3.0.0 (Telemyr Edition).</div>
+          <div style="color: #9ca3af; margin-top: 2px;">
+            Type <strong style="color: #38bdf8">help</strong> or click any of the shortcut buttons above.
+          </div>
+        </div>
+
+        <div class="telemyr-terminal-input-row">
+          <span style="color: #AFF005; font-size: 0.9rem; font-weight: 600;">akshit@telemyr:~$</span>
+          <input type="text" id="terminal-input" class="telemyr-terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command (e.g. 'help', 'hey there', 'projects', 'skills')...">
+        </div>
       </div>
     </div>
   </section>
