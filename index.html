@@ -115,27 +115,55 @@
     <canvas class="h-row__ink" id="hero-canvas"></canvas>
 
     <div class="h-row__content">
+      <div class="hero-top-badge">
+        <span class="hero-status-dot"></span>
+        <span>Available for Engineering Roles &amp; High-Impact Projects</span>
+      </div>
+
       <h1 class="h-row__logo">akshit mehta</h1>
+      
       <p class="h-row__tag">Data Science + AI &amp; Full-Stack Systems</p>
+
+      <p class="hero-manifesto">
+        Architecting robust predictive pipelines, empirical statistical models, and modern edge-deployed web applications.
+      </p>
 
       <!-- 4 Core Service Cells with Lime Spots -->
       <div class="h-row__cells">
-        <div class="h-row__cell">
+        <div class="h-row__cell" onclick="document.querySelector('#case-studies').scrollIntoView({behavior:'smooth'})">
           <div class="h-row__spot"></div>
           <span>Predictive Machine Learning</span>
         </div>
-        <div class="h-row__cell">
+        <div class="h-row__cell" onclick="document.querySelector('#capabilities').scrollIntoView({behavior:'smooth'})">
           <div class="h-row__spot"></div>
           <span>Statistical EDA &amp; Testing</span>
         </div>
-        <div class="h-row__cell">
+        <div class="h-row__cell" onclick="document.querySelector('#capabilities').scrollIntoView({behavior:'smooth'})">
           <div class="h-row__spot"></div>
           <span>High-Throughput ETL</span>
         </div>
-        <div class="h-row__cell">
+        <div class="h-row__cell" onclick="document.querySelector('#case-studies').scrollIntoView({behavior:'smooth'})">
           <div class="h-row__spot"></div>
           <span>Full-Stack Edge Web</span>
         </div>
+      </div>
+
+      <!-- Quick Action Buttons in Hero -->
+      <div class="hero-actions">
+        <a href="#case-studies" class="hero-btn-primary">
+          <span>Explore Works</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#terminal" class="hero-btn-secondary">
+          <span>Interactive Shell</span>
+          <span class="hero-btn-chip">&gt;_</span>
+        </a>
+        <a href="#contact" class="hero-btn-link">
+          <span>Get in Touch</span>
+          <span>→</span>
+        </a>
       </div>
 
       <div class="h-row__partners">

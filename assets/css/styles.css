@@ -205,6 +205,30 @@ body {
   width: 100%;
 }
 
+.hero-top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: #444;
+  background: var(--color-light-grey);
+  border: var(--rule);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+}
+
 .h-row__logo {
   font-size: clamp(3.2rem, 11vw, 11rem);
   font-weight: 600;
@@ -212,16 +236,100 @@ body {
   letter-spacing: -0.05em;
   color: var(--color-black);
   text-transform: lowercase;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   transition: transform 0.3s ease;
 }
 
 .h-row__tag {
-  font-size: clamp(1rem, 2.2vw, 1.8rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--color-text-grey);
-  margin-bottom: 2.5rem;
+  font-size: clamp(1.1rem, 2.4vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.hero-manifesto {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.55;
+  color: #555;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  letter-spacing: -0.015em;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  background: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-btn-primary:hover {
+  background: var(--color-accent-lime);
+  color: var(--color-black);
+  border-color: var(--color-accent-lime);
+  transform: translateY(-2px);
+}
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-white);
+  color: var(--color-black);
+  border: var(--rule);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-btn-secondary:hover {
+  background: var(--color-light-grey);
+  border-color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+.hero-btn-chip {
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  background: var(--color-light-grey);
+  border: var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.hero-btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.25rem;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.hero-btn-link:hover {
+  color: var(--color-black);
+  transform: translateX(3px);
 }
 
 .h-row__cells {
