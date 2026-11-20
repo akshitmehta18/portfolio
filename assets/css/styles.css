@@ -850,6 +850,89 @@ body {
   color: var(--color-black);
 }
 
+/* Contact Form Success State */
+.contact-success-box {
+  background: var(--color-light-grey);
+  border: var(--rule);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  max-width: 900px;
+  margin-bottom: 2.5rem;
+  border-radius: 4px;
+  animation: fadeIn 0.3s ease;
+}
+
+.contact-success-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-accent-lime);
+  color: var(--color-black);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.contact-success-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.75rem;
+  color: var(--color-black);
+}
+
+.contact-success-text {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contact-success-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.contact-reset-btn:hover {
+  background: var(--color-accent-lime);
+  color: var(--color-black);
+}
+
+.contact-gmail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-white);
+  color: var(--color-black);
+  border: var(--rule);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.contact-gmail-btn:hover {
+  border-color: var(--color-black);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .footer-meta {
   margin-top: 5rem;
   padding-top: 2rem;

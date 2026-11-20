@@ -362,33 +362,48 @@
   <footer class="footer-contact" id="contact">
     <h2 class="contact-headline">Let's talk.</h2>
 
-    <form id="telemyr-contact-form">
-      <div class="telemyr-form-grid">
-        <div class="form-field">
-          <label class="form-label" for="tf-company">Company or Project</label>
-          <input class="form-input" id="tf-company" type="text" placeholder="Acme Inc. / Independent">
+    <div id="contact-container">
+      <form id="telemyr-contact-form">
+        <div class="telemyr-form-grid">
+          <div class="form-field">
+            <label class="form-label" for="tf-company">Company or Project</label>
+            <input class="form-input" id="tf-company" type="text" placeholder="Acme Inc. / Independent">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="tf-name">Your Name *</label>
+            <input class="form-input" id="tf-name" type="text" required placeholder="Jane Doe">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="tf-email">Your Email *</label>
+            <input class="form-input" id="tf-email" type="email" required placeholder="jane@example.com">
+          </div>
+          <div class="form-field" style="grid-column: 1 / -1;">
+            <label class="form-label" for="tf-message">Message *</label>
+            <input class="form-input" id="tf-message" type="text" required placeholder="Tell me about what you are building...">
+          </div>
         </div>
-        <div class="form-field">
-          <label class="form-label" for="tf-name">Your Name *</label>
-          <input class="form-input" id="tf-name" type="text" required placeholder="Jane Doe">
-        </div>
-        <div class="form-field">
-          <label class="form-label" for="tf-email">Your Email *</label>
-          <input class="form-input" id="tf-email" type="email" required placeholder="jane@example.com">
-        </div>
-        <div class="form-field" style="grid-column: 1 / -1;">
-          <label class="form-label" for="tf-message">Message *</label>
-          <input class="form-input" id="tf-message" type="text" required placeholder="Tell me about what you are building...">
+
+        <button class="form-send-btn" id="contact-submit-btn" type="submit">
+          <span id="btn-text">Send Message</span>
+          <svg id="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2.5 8h10.5M8.75 3.75 13 8l-4.25 4.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Success State Box -->
+      <div id="contact-success" class="contact-success-box" style="display: none;">
+        <span class="contact-success-badge">✓ MESSAGE DISPATCHED</span>
+        <h3 class="contact-success-title" id="success-headline">Thank you.</h3>
+        <p class="contact-success-text" id="success-message">
+          Your message has been dispatched. I will write back to your email shortly.
+        </p>
+        <div class="contact-success-actions">
+          <button type="button" class="contact-reset-btn" id="contact-reset-btn">Send Another Message</button>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="contact-gmail-btn" id="gmail-open-btn">Open in Gmail ↗</a>
         </div>
       </div>
-
-      <button class="form-send-btn" type="submit">
-        <span>Send Message</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M2.5 8h10.5M8.75 3.75 13 8l-4.25 4.25" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </form>
+    </div>
 
     <div class="footer-meta">
       <div>

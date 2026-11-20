@@ -482,22 +482,81 @@ function escapeHtml(str) {
 }
 
 /* ==========================================================================
-   6. Contact Form Handler
+   6. Contact Form Handler (Resilient & Multi-Channel)
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById("telemyr-contact-form");
-  if (!form) return;
+  const successBox = document.getElementById("contact-success");
+  const resetBtn = document.getElementById("contact-reset-btn");
+  const gmailBtn = document.getElementById("gmail-open-btn");
+  const submitBtn = document.getElementById("contact-submit-btn");
+  const btnText = document.getElementById("btn-text");
+
+  if (!form || !successBox) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const company = document.getElementById("tf-company").value.trim();
+
+    const company = document.getElementById("tf-company").value.trim() || "Independent Project";
     const name = document.getElementById("tf-name").value.trim();
     const email = document.getElementById("tf-email").value.trim();
     const message = document.getElementById("tf-message").value.trim();
 
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${name} (${company || "Individual"})`);
-    const body = encodeURIComponent(`${message}\n\nSender: ${name}\nEmail: ${email}\nCompany: ${company}`);
+    if (!name || !email || !message) return;
 
-    window.location.href = `mailto:mehtaakshit65@gmail.com?subject=${subject}&body=${body}`;
+    if (btnText) btnText.innerText = "Sending...";
+    if (submitBtn) submitBtn.disabled = true;
+
+    const subjectStr = `Portfolio Inquiry from ${name} (${company})`;
+    const bodyStr = `${message}\n\n---\nSender: ${name}\nEmail: ${email}\nCompany/Project: ${company}`;
+
+    const encodedSubject = encodeURIComponent(subjectStr);
+    const encodedBody = encodeURIComponent(bodyStr);
+
+    // 1. Prepare direct Gmail Web URL
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=mehtaakshit65@gmail.com&su=${encodedSubject}&body=${encodedBody}`;
+    if (gmailBtn) gmailBtn.href = gmailUrl;
+
+    // 2. Prepare mailto link
+    const mailtoUrl = `mailto:mehtaakshit65@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+
+    // 3. Copy message to clipboard for seamless reliability
+    try {
+      navigator.clipboard.writeText(`To: mehtaakshit65@gmail.com\nSubject: ${subjectStr}\n\n${bodyStr}`);
+    } catch (_) {}
+
+    // 4. Update success message details
+    const successHeadline = document.getElementById("success-headline");
+    const successMessage = document.getElementById("success-message");
+
+    if (successHeadline) successHeadline.innerText = `Thank you, ${name}.`;
+    if (successMessage) {
+      successMessage.innerHTML = `Your message regarding <strong>${company}</strong> has been prepared. I will write back to <strong>${email}</strong> within 24 hours. A copy has also been placed on your clipboard.`;
+    }
+
+    // 5. Trigger email link (will open email app or Gmail)
+    setTimeout(() => {
+      // Hidden trigger anchor to prevent navigation blocks
+      const a = document.createElement("a");
+      a.href = mailtoUrl;
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      // Transition UI to Telemyr success view
+      form.style.display = "none";
+      successBox.style.display = "block";
+      if (btnText) btnText.innerText = "Send Message";
+      if (submitBtn) submitBtn.disabled = false;
+    }, 400);
   });
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      form.reset();
+      successBox.style.display = "none";
+      form.style.display = "block";
+    });
+  }
 }
