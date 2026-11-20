@@ -789,8 +789,62 @@ body {
   font-size: clamp(2.5rem, 6vw, 5.5rem);
   font-weight: 600;
   letter-spacing: -0.05em;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   line-height: 1;
+}
+
+/* Telemyr Direct Contact Channels Bar */
+.contact-direct-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 2.25rem;
+  border-bottom: var(--rule);
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-item-label {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-grey);
+}
+
+.contact-item-val {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.contact-item-val:hover {
+  color: #000;
+  transform: translateY(-1px);
+}
+
+.contact-pill-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--color-supernal-light-green);
+  border: 1px solid #c2ea48;
+  color: #2b4c00;
+  font-weight: 600;
 }
 
 .telemyr-form-grid {

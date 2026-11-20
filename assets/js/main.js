@@ -398,13 +398,15 @@ function initTerminal() {
       `;
     }
     // 7. Contact
-    else if (["contact", "email", "reach", "socials"].includes(norm)) {
+    else if (["contact", "email", "reach", "socials", "phone", "linkedin"].includes(norm)) {
       responseHtml = `
         <div style="color:#AFF005; font-weight:600;">Get In Touch:</div>
-        <div style="color:#d1d5db; line-height:1.6;">
+        <div style="color:#d1d5db; line-height:1.7;">
           • Email: <a href="mailto:mehtaakshit65@gmail.com" style="color:#38bdf8; text-decoration:underline;">mehtaakshit65@gmail.com</a><br>
+          • Phone: <a href="tel:+918219178089" style="color:#38bdf8; text-decoration:underline;">+91 82191 78089</a><br>
+          • LinkedIn: <a href="https://www.linkedin.com/in/akshitmehta0004/" target="_blank" style="color:#38bdf8; text-decoration:underline;">linkedin.com/in/akshitmehta0004</a><br>
           • GitHub: <a href="https://github.com/Mehtaji2004" target="_blank" style="color:#38bdf8; text-decoration:underline;">github.com/Mehtaji2004</a><br>
-          • Availability: <strong style="color:#AFF005;">Open for Full-time Roles & Projects Worldwide</strong>
+          • Status: <strong style="color:#AFF005;">Open for Full-Time Roles &amp; High-Impact Projects</strong>
         </div>
       `;
     }
